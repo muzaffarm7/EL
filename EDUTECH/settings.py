@@ -158,7 +158,6 @@ LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "kloudless.settings")
-from django.core.wsgi import get_wsgi_application
-from dj_static import Cling
+from django.core.wsgi import get_wsgi_application,Cling
 
 application = Cling(get_wsgi_application())
