@@ -26,7 +26,7 @@ SECRET_KEY = 'ii4wc&cz)!=ivd4vmahzbqaj@7t3@0*v#5wd5v#*)nh2ge3mo5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-import os
+#import os
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -36,7 +36,7 @@ DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 # Set hosts to allow any app on Heroku and the local testing URL
 ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
 
-ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -166,7 +166,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/
 """
 
-import os
+#import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "kloudless.settings")
 
 from django.core.wsgi import get_wsgi_application
