@@ -30,7 +30,7 @@
 			<td>{{i.mobile}}</td>
 			<td>{{i.address}}</td>
 			<td>{{i.emailid}}</td>
-			<!-- <td><a href=" {% url 'delete_student' i.id %}" onclick="return confirm('Are you really want to Remove')" class="btn btn-danger" >Remove</a></td>-->
+			<td><a href=" {% url 'delete_student' i.id %}" onclick="return confirm('Are you really want to Remove')" class="btn btn-danger" >Remove</a></td>
 		</tr>
 		{% endfor %}
 	</tbody>
