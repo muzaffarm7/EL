@@ -156,3 +156,9 @@ LOGIN_REDIRECT_URL = '/'
 
 # Add to test email:
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "kloudless.settings")
+from django.core.wsgi import get_wsgi_application
+from dj_static import Cling
+
+application = Cling(get_wsgi_application())
