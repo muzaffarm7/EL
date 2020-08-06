@@ -65,9 +65,9 @@ def Add_Student(request):
     d={'error':error}
     return render(request,'add_student.html',d)
 
-def Delete_Student(request,pid):
+"""def Delete_Student(request,pid):
 	if not request.user.is_staff:
 		return redirect('login')
 	student = Student.objects.get(id=pid)
 	student.delete()
-	return redirect('view_student') 
+	return redirect('view_student') """

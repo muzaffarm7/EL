@@ -28,5 +28,5 @@ urlpatterns = [
     path('logout/',Logout_Admin,name='logout'),
     path('view_student/', View_Student,name='view_student'),
     path('add_student/', Add_Student,name='add_student'),
-    path('delete_student(?P<int:pid>)/', Delete_Student,name='delete_student'),
+    #path('delete_student(?P<int:pid>)/', Delete_Student,name='delete_student'),
 ]
