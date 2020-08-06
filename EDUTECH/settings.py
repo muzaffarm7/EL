@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'EDUTECH.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+import dj-database-url
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
