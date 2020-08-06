@@ -1,1 +1,1 @@
-web: gunicorn EDUTECH_App.wsgi --log-file -
+web: gunicorn EDUTECH.wsgi --log-file -
