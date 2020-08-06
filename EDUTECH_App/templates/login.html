@@ -1,0 +1,28 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block body %}
+{% ifequal error "no" %}
+<script>
+	alert('Logged In Successfully');
+	window.location = ('{% url 'home' %}');
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+	alert('In Valid Login Credentials, Try Again');
+</script>
+{% endifequal %}
+<div class="container" style="margin-top: 60px; width: 500px; height: 600px;">
+<h1 class="text-center text-primary font-weight-blod">Admin Login</h1>	 
+<form method="post">
+	{% csrf_token %}
+	<label><b>Admin User Name</b></label>
+	<input type="text" name="uname" class="form-control">
+	<label><b>Password</b></label>
+	<input type="password" name="pwd" class="form-control"><br>
+	<input type="submit" name="Login" class="btn btn-primary form-control">
+</form>
+</div>
+
+{% endblock %}

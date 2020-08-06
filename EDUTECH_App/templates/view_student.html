@@ -1,0 +1,38 @@
+
+
+{% extends 'nav.html' %}
+{% load static %}
+{% block body %}
+<div class="container" style="margin-top: 50px;"> 
+<h2 class="text-center">View Student</h2>
+<br><br>
+
+<table id="example" class="table table-hover">
+	<thead>
+		<tr>
+			<th>Student ID</th>
+			<th>Student Name</th>
+			<th>Student Gender</th>
+			<th>Student Age</th>
+			<th>Student Mobile</th>
+			<th>Student Address</th>
+			<th>Student Email</th>
+			<th>Remove</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for i in stud  %}
+		<tr>
+			<td>{{i.id}}</td>
+			<td>{{i.name}}</td>
+			<td>{{i.gender}}</td>
+			<td>{{i.age}}</td>
+			<td>{{i.mobile}}</td>
+			<td>{{i.address}}</td>
+			<td>{{i.emailid}}</td>
+			<td><a href=" {% url 'delete_student' i.id %}" onclick="return confirm('Are you really want to Remove')" class="btn btn-danger" >Remove</a></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}
