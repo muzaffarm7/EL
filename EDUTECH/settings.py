@@ -15,19 +15,16 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 #import os
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
+TEMPLATES=os.path.join(BASE_DIR,'templates')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+DEBUG = True
 
 # Set hosts to allow any app on Heroku and the local testing URL
 ALLOWED_HOSTS = ['ell555.herokuapp.com','EDUTECH_App.herokuapp.com','127.0.0.1']
@@ -61,7 +58,7 @@ ROOT_URLCONF = 'EDUTECH.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
