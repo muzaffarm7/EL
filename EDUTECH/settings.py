@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = True
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 # Set hosts to allow any app on Heroku and the local testing URL
 ALLOWED_HOSTS = ['ell555.herokuapp.com','EDUTECH_App.herokuapp.com','127.0.0.1']
@@ -148,3 +148,28 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'
+
+# Add to test email:
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+"""
+WSGI config for kloudless project.
+
+It exposes the WSGI callable as a module-level variable named ``application``.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/
+"""
+
+#import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "kloudless.settings")
+
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+
+from django.core.wsgi import get_wsgi_application
+from dj_static import Cling
+
+application = Cling(get_wsgi_application())
